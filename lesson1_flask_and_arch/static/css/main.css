@@ -1,0 +1,16 @@
+body {
+    background: linen;
+    margin-top: 100px;
+    text-align: center;
+}
+
+h1 {
+    color: firebrick;
+    font-size: 10.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+    font-size: 2.25em;
+    color: #91886e;   
+}
