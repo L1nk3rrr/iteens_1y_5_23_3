@@ -1,0 +1,7 @@
+<nav>
+  {% for menu_item in ["index", "get_results"] %}
+    <button>
+    <a href="{{ url_for(menu_item) }}">{{ menu_item|lower|title }}</a>
+    </button>
+  {% endfor %}
+</nav>

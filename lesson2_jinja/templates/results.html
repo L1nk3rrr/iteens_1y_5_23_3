@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ test_name }}
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ test_name }} {{ title }}</h1>
+    <ul>
+        {% for student in students|sort(attribute="score",reverse=True) %}
+        <li>
+            {% if student.score > 80 %}😊{% else %}☹{% endif %}
+            <em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
+        </li>
+        {% endfor %}
+    </ul>
+    {# Це мій коментар який не буде видно #}
+{% endblock content %}
+
+
