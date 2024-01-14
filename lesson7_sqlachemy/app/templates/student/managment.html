@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% if students %}
+        <table>
+        {% for student in students %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('student.student_get', id=student.id) }}">{{ student }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h1>Відсутні будь-які елементи</h1>
+    {% endif%}
+
+    <form action="{{ url_for('student.student_add') }}" method="post">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" required>
+        </p>
+        <p>
+            <label for="birthdate">Birth date</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </p>
+        <p>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+        </p>
+        <p>
+            <label for="groups">Groups</label>
+            <select id="groups" name="groups" multiple>
+                {% for group in groups %}
+                    <option value="{{ group.id }}" {% if group.selected %}selected{% endif%}> {{ group }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <button type="submit">ADD</button>
+            <button type="reset">RESET</button>
+        </p>
+    </form>
+{% endblock main %}
