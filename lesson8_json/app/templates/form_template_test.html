@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{# Це чисто для прикладу, як можна ще робити формочку через об'єкт класу #}
+<form action="" method="post">
+    <p>{{ form.nickname.label }} {{ form.nickname }}</p>
+    <p>{{ form.password.label }} {{ form.password }}</p>
+    <p>{{ form.submit }}</p>
+</form>
+{% endblock main %}
