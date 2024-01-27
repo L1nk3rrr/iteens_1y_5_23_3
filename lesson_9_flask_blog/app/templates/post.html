@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+<span class="badge text-bg-info">{{ post['created_date'] }}</span>
+<p>{{ post['content'] }}</p>
+{% endblock main %}
