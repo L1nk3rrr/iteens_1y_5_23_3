@@ -2,13 +2,29 @@
 
 {% block main %}
     <h1>Welcome to FlaskBlog</h1>
-
-    {% for post in posts %}
-        <a href="{{ url_for('post.get_post', post_id=post['id']) }}">
-            <h2>{{ post['title'] }}</h2>
-        </a>
-        <span class="badge text-bg-info">{{ post['created_date'] }}</span>
-        <hr>
-    {% endfor %}
+    {% include 'flash_messages_component.html' %}
+    <div class="container">
+        {% for post in posts %}
+            <div class="row">
+                <div class="col-9">
+                    <a href="{{ url_for('post.get_post', post_id=post['id']) }}">
+                        <h2>{{ post['title'] }}</h2>
+                    </a>
+                    <span class="badge text-bg-info">{{ post['created_date'] }}</span>
+                </div>
+                <div class="col-3">
+                    <span>
+                        <a href="{{ url_for('post.edit_post', post_id=post['id']) }}">
+                            <span class="badge text-bg-warning">Edit</span>
+                        </a>
+                        <a href="{{ url_for('post.delete_post', post_id=post['id']) }}">
+                            <span class="badge text-bg-danger">Delete</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
 
 {% endblock main %}

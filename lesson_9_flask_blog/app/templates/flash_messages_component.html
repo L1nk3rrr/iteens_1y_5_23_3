@@ -1,0 +1,11 @@
+<div class="mb-3">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="">
+                {% for message in messages %}
+                    <span class="badge text-bg-danger">{{ messages }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>

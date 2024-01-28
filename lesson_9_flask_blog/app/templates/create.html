@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>{% block title %}Create new post{% endblock title %}</h1>
+    {% include 'flash_messages_component.html' %}
+    <form method="post">
+        <div class="form-group">
+            <label class="form-label" for="title">Title</label>
+            <input class="form-control" type="text" name="title" value="{{ request.form['title'] }}">
+            <label class="form-label" for="content">Content</label>
+            <textarea class="form-control" name="content" placeholder="Post Content">{{ request.form['content'] }}</textarea>
+            <button class="btn btn-primary mt-3" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock main %}
