@@ -1,0 +1,58 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Quotes API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1.0/post/{id}": {
+            "get": {
+                "description": "Returns post with id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of post to return",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            },
+            "put": {
+                "description": "Returns id of updated post",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of post to return",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "created_date",
+                        "in": "body",
+                        "description": "Date when post was added",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful update"
+                    }
+                }
+            }
+        }
+    }
+}

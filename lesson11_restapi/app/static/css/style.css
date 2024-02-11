@@ -1,0 +1,12 @@
+h1 {
+/*border: 2px #eee solid;*/
+text-align: center;
+padding: 10px;
+}
+
+.flashes {
+    background-color: brown;
+    color: white;
+    text-align: center;
+    text-wide: 20px;
+}
